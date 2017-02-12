@@ -1,3 +1,3 @@
 FROM postgres:latest
-VOLUME ["/dbdata-ponch"]
+VOLUME ["/var/lib/postgresql/data"]
 CMD ["/bin/true"]
