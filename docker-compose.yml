@@ -1,0 +1,9 @@
+version: '2'
+services:
+    database:
+        image: postgres:latest
+        ports: "5432:5432"
+        volumes_from:
+            - database-data
+    database-data:
+        image: barbasa/postgres-data
