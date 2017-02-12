@@ -1,17 +1,25 @@
 # How to populate the data container
 
-Populate external dir with pg data
+* Find your data container
 
-```docker run --rm -v <absolute_path_of_host_data_dir>:/var/lib/postgresql/data --name postgres-ponch -p 5432:5432 postgres```
+```docker ps -a```
 
-Build container data
+* Copy the pg data locally
+
+```docker cp <data_container_id>:/var/lib/postgresql/data ./pgdata```
+
+* Populate external dir with pg data
+
+```docker run --rm -v <host_data_dir_absolute_path>:/var/lib/postgresql/data --name postgres-ponch -p 5432:5432 postgres```
+
+* Build container data
 
 ```docker build -t postgres-data .```
 
-Tag new image created
+* Tag new image created
 
 ```docker tag e03262b61fd5 barbasa/postgres-data:latest```
 
-...and push
+* ...and push
 
 ```docker push```
