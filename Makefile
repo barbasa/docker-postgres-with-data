@@ -22,4 +22,4 @@ stop:
 
 restart: stop start
 
-.PHONY: build clean stop
+.PHONY: build clean stop run start publish restart
