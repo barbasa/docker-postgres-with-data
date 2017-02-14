@@ -8,9 +8,9 @@
 
 ```docker cp <data_container_id>:/var/lib/postgresql/data ./pgdata```
 
-* Populate external dir with pg data
+* Populate host dir with container pg data
 
-```docker run --rm -v <host_data_dir_absolute_path>:/var/lib/postgresql/data --name postgres-ponch -p 5432:5432 postgres```
+```docker run --rm -v "$(pwd)/pgdata":/var/lib/postgresql/data --name postgres-ponch -p 5432:5432 postgres```
 
 * Build container data
 
@@ -22,4 +22,4 @@
 
 * ...and push
 
-```docker push```
+```docker push barbasa/postgres-data```
