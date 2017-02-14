@@ -6,6 +6,9 @@ WORKDIR /app
 
 ADD ./src/ /app/
 
+RUN npm install
+RUN npm install -g forever
+
 EXPOSE 8888
 
 RUN chmod +x start_app.sh
