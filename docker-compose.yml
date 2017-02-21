@@ -11,7 +11,7 @@ services:
     node-app:
         image: barbasa/node-app
         ports:
-            - "8888:8888"
+            - "8881:8881"
         links:
             - database
         environment:
